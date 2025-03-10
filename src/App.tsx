@@ -1,6 +1,3 @@
-import { ApiReferenceReact } from "@scalar/api-reference-react";
-import "@scalar/api-reference-react/style.css";
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,7 +7,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { ApiReferenceReact } from "@scalar/api-reference-react";
+import "@scalar/api-reference-react/style.css";
 import { Settings } from "lucide-react";
+import { useEffect, useState } from "react";
 
 function SettingsDialog({
   specUrl,
@@ -20,14 +20,16 @@ function SettingsDialog({
   onSpecUrlChange: (url: string) => void;
 }) {
   const [tempUrl, setTempUrl] = useState(specUrl);
+  const [open, setOpen] = useState(false);
 
   const handleSave = () => {
     onSpecUrlChange(tempUrl);
     localStorage.setItem("specUrl", tempUrl);
+    setOpen(false);
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button size="icon">
           <Settings className="h-5 w-5" />
