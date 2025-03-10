@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+# OpenAPI Documentation Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React application that renders OpenAPI/Swagger documentation using [@scalar/api-reference-react](https://github.com/scalar/scalar). The app allows you to view any OpenAPI specification by providing its URL.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- View OpenAPI/Swagger documentation in a modern, interactive interface
+- Default documentation loaded from Scalar's Galaxy API
+- Persists your last viewed API specification URL in localStorage
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## View custom docs by running this script on your console with your openapi spec url
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+const specUrl = "https://cdn.jsdelivr.net/npm/@scalar/galaxy/dist/latest.yaml"; // replace with your spec url
+localStorage.setItem("specUrl", specUrl);
 ```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone this repository:
+
+```bash
+git clone <your-repo-url>
+cd <your-repo-name>
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+The application will be available at `http://localhost:5173` by default.
+
+## Usage
+
+The application will load the Scalar Galaxy API documentation by default. To view a different OpenAPI specification:
+
+1. Have your OpenAPI specification hosted somewhere accessible via URL
+2. Update the URL in the application
+3. The application will remember your last viewed specification URL
+
+## Built With
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [@scalar/api-reference-react](https://github.com/scalar/scalar) - For rendering OpenAPI documentation
+
+## License
+
+This project is licensed under the MIT License.
