@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ApiSpec, useSpecStore } from "./store";
+import { ApiSpec, useSpecStore } from "./spec.store";
 
 const STORAGE_KEY = "api-specs";
 

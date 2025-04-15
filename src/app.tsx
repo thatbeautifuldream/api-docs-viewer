@@ -1,6 +1,6 @@
 import { SettingsDialog } from "@/components/settings-dialog";
 import { Button } from "@/components/ui/button";
-import { useActiveSpec, useLoadSpecsFromStorage, useSyncSpecsToStorage } from "@/lib/hooks";
+import { useActiveSpec, useLoadSpecsFromStorage, useSyncSpecsToStorage } from "@/lib/spec.hooks";
 import { ApiReferenceReact } from "@scalar/api-reference-react";
 import "@scalar/api-reference-react/style.css";
 import { FileScan, FileTextIcon, LinkIcon, InfoIcon } from "lucide-react";

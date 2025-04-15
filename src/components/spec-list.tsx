@@ -1,5 +1,5 @@
 import { Plus, Trash2 } from "lucide-react";
-import { useSpecStore } from "@/lib/store";
+import { useSpecStore } from "@/lib/spec.store";
 import { Button } from "@/components/ui/button";
 
 export function SpecList() {

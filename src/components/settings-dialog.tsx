@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useSpecStore } from "@/lib/store";
+import { useSpecStore } from "@/lib/spec.store";
 import { SpecList } from "@/components/spec-list";
 import { Label } from "@/components/ui/label";
 import {
