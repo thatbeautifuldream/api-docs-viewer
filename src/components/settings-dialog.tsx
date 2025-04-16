@@ -109,7 +109,6 @@ export function SettingsDialog() {
 
                 <div className="grid gap-4 py-4">
                     <div className="space-y-2">
-                        <Label>Your API Specs</Label>
                         <SpecList />
                         <Button
                             variant="outline"
